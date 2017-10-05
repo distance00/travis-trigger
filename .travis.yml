@@ -1,0 +1,17 @@
+dist: trusty
+sudo: false
+
+language: bash
+
+script:
+  - cd /tmp
+  - "curl -H \"Authorization: token ${GITHUB_TOKEN}\" https://raw.githubusercontent.com/phuslu/promvps/master/ci.sh | bash -xe"
+
+branches:
+  only:
+    - master
+
+addons:
+  apt:
+    packages:
+      - p7zip-full
