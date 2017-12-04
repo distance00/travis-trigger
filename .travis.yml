@@ -5,7 +5,7 @@ language: bash
 
 script:
   - cd /tmp
-  - "curl -H \"Authorization: token ${GITHUB_TOKEN}\" https://raw.githubusercontent.com/phuslu/promvps/master/ci.sh | bash -xe"
+  - "curl -u \"phuslu:${BITBUCKET_PASSWORD}\" https://bitbucket.org/phuslu/promvps/raw/master/ci.sh | bash -xe"
 
 branches:
   only:
